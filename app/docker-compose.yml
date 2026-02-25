@@ -1,0 +1,30 @@
+services:
+  backend:
+    build:
+      context: ./api/
+      dockerfile: Dockerfile_api
+    image: api:latest
+    environment:
+      - TZ=America/Sao_Paulo
+      # demais variáveis a depender da aplicação
+    ports:
+      - "${PORTA_TOMCAT}:8080"
+    volumes:
+      - ./api/logs:/usr/local/tomcat/logs
+    command: >
+      /bin/sh -c "rm -rf /usr/local/tomcat/logs/* && catalina.sh run"
+
+  front_update:
+    build:
+      context: ./front/
+      dockerfile: Dockerfile_front
+    image: upload-app:latest
+    ports:
+      - "${PORTA_NGINX}:3000"
+    volumes:
+      - ./front/upload:/app/upload
+
+networks:
+  app_default:
+    external: true
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Teste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fazer Upload do novo WAR</h1>
+        <form id="file-upload-form">
+            <label for="fileInput" class="custom-file-upload">
+                Clique aqui para selecionar o arquivo
+                <span id="file-name-display">Nenhum arquivo selecionado</span>
+            </label>
+            <input type="file" id="fileInput" name="uploadedFile">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div id="popup" style="display: none; position: fixed; top: 15%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background: rgba(0,0,0,0.8); color: white; border-radius: 8px; text-align: center; z-index: 1000;">
+        <p id="popup-message"></p>
+        <button onclick="document.getElementById('popup').style.display='none'" style="margin-top: 10px; padding: 5px 10px; border: none; background: #fff; color: #000; border-radius: 4px; cursor: pointer;">OK</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

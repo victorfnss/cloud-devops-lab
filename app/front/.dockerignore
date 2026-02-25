@@ -1,0 +1,8 @@
+ajusta.sh
+scripts/
+node_modules
+npm-debug.log
+.env
+.git
+.gitignore
+uploads/spincare-mv-soul-connector.war
